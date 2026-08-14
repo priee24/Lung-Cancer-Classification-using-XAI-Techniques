@@ -19,11 +19,11 @@ HTML, CSS, JS (for frontend)
 
 Lung-Cancer-Detection-XAI/
 │
-├── Codes/                    # All Python scripts
-├── templates/                # Frontend (Flask)
-├── Pre-Trained_Model/        # Saved PyTorch .pth model
-├── Phase1_Code/              # CNN for synthetic stage classification
-├── Docs/                     # SDG certificate, paper, readme
+├── Codes/                    
+├── templates/               
+├── Pre-Trained_Model/        
+├── Phase1_Code/              
+├── Docs/                     
 ├── requirements.txt
 └── README.md
 
