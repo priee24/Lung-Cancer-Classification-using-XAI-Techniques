@@ -25,7 +25,7 @@ Lung-Cancer-Detection-XAI/
 ├── Phase1_Code/              
 ├── Docs/                     
 ├── requirements.txt
-└── README.md
+|── README.md
 
 🚀 How to Run the Project
 
