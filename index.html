@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer Prediction</title>
+
+    <!-- Correct CSS link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h2>Lung Cancer Prediction</h2>
+        
+        <form id="uploadForm">
+            <input type="file" id="fileInput" required>
+            <button type="submit">Upload & Process</button>
+        </form>
+
+        <p id="predictedClassLabel" class="prediction-label"></p>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <p id="progressPercentage">0%</p>
+        </div>
+
+        <!-- PAGE 1: Original Image -->
+        <div id="page1" style="display: none;">
+            <h3>Processing Complete!</h3>
+            <p class="prediction-result">
+                Predicted Class: <span id="classLabel"></span>
+            </p>
+            <p id="originalFilename"></p>
+            <div class="image-container">
+                <img id="originalImageWithLabel" src="" alt="Original Image with Label">
+                <a id="downloadOriginalWithLabel" href="#" download class="download-btn">
+                    Download Image
+                </a>
+            </div>
+            <button onclick="showPage(2)" class="nav-btn">Next Page</button>
+        </div>
+
+        <!-- PAGE 2: LIME Image -->
+        <div id="page2" style="display: none;">
+            <p id="limeFilename"></p>
+            <div class="image-container">
+                <img id="limeImage" src="" alt="LIME Contribution">
+                <a id="downloadLIME" href="#" download class="download-btn">
+                    Download Image
+                </a>
+            </div>
+            <button onclick="showPage(1)" class="nav-btn">Previous Page</button>
+            <button onclick="showPage(3)" class="nav-btn">Next Page</button>
+        </div>
+
+        <!-- PAGE 3: Grad-CAM -->
+        <div id="page3" style="display: none;">
+            <p id="gradcamFilename"></p>
+            <div class="image-container">
+                <img id="gradcamImage" src="" alt="Grad-CAM Heatmap">
+                <a id="downloadGradCAM" href="#" download class="download-btn">
+                    Download Image
+                </a>
+            </div>
+            <button onclick="showPage(2)" class="nav-btn">Previous Page</button>
+            <button onclick="showPage(4)" class="nav-btn">Next Page</button>
+        </div>
+
+        <!-- PAGE 4: LIME Bar Chart -->
+        <div id="page4" style="display: none;">
+            <p id="limeBarChartFilename"></p>
+            <div class="image-container">
+                <img id="limeBarChart" src="" alt="LIME Feature Contributions">
+                <a id="downloadLIMEBarChart" href="#" download class="download-btn">
+                    Download Image
+                </a>
+            </div>
+            <button onclick="showPage(3)" class="nav-btn">Previous Page</button>
+        </div>
+    </div>
+
+    <!-- Page navigation script -->
+    <script>
+        function showPage(pageNumber) {
+            let pages = document.querySelectorAll("[id^=page]");
+            pages.forEach(page => page.style.display = "none");
+            document.getElementById("page" + pageNumber).style.display = "block";
+        }
+    </script>
+
+    <!-- Correct JS link -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
