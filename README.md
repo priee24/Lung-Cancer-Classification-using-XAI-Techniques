@@ -17,7 +17,7 @@ HTML, CSS, JS (for frontend)
 
 📁 Folder Structure
 
-Lung-Cancer-Detection-XAI/
+Lung-Cancer-Detection-XAI
 
 ├── Codes/                    
 ├── templates/               
@@ -25,7 +25,7 @@ Lung-Cancer-Detection-XAI/
 ├── Phase1_Code/              
 ├── Docs/                     
 ├── requirements.txt
-|── README.md
+
 
 🚀 How to Run the Project
 
