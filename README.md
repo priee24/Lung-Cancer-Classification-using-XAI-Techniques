@@ -18,7 +18,7 @@ HTML, CSS, JS (for frontend)
 📁 Folder Structure
 
 Lung-Cancer-Detection-XAI/
-│
+
 ├── Codes/                    
 ├── templates/               
 ├── Pre-Trained_Model/        
